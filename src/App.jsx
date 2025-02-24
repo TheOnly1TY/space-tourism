@@ -1,4 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Homepage } from "./pages/Homepage";
+import { Destination } from "./pages/Destination";
+import { Crew } from "./pages/Crew";
+import { Technology } from "./pages/Technology";
 
 export default function App() {
   return (
@@ -11,17 +15,4 @@ export default function App() {
       </Routes>
     </BrowserRouter>
   );
-}
-
-function Homepage() {
-  return <h1>HOMEPAGE</h1>;
-}
-function Destination() {
-  return <h1>DESTINATION</h1>;
-}
-function Crew() {
-  return <h1>CREW</h1>;
-}
-function Technology() {
-  return <h1>TECHNOLOGY</h1>;
 }
