@@ -25,7 +25,7 @@ export function Nav() {
           </li>
         </NavLink>
       </ul> */}
-      <img src="/assets/shared/icon-hamburger.svg" />;
+      <img src="/assets/shared/icon-hamburger.svg" />
     </div>
   );
 }
