@@ -3,7 +3,7 @@ import { NavBar } from "../components/NavBar";
 
 export function Homepage() {
   return (
-    <div className="min-h-screen bg-[url(/assets/home/background-home-mobile.jpg)] lg:bg-[url(/assets/home/background-home-desktop.jpg)] bg-no-repeat bg-center bg-cover p-[1.5rem]">
+    <div className="min-h-screen bg-[url(/assets/home/background-home-mobile.jpg)] lg:bg-[url(/assets/home/background-home-desktop.jpg)] bg-no-repeat bg-center bg-cover ">
       <NavBar />
       <Main />
     </div>
@@ -12,7 +12,7 @@ export function Homepage() {
 
 function Main() {
   return (
-    <div className="flex justify-between items-center flex-col lg:flex-row lg:max-w-[69.375rem] mx-auto my-15 lg:my-35 md:my-23">
+    <div className="flex justify-between items-center flex-col lg:flex-row lg:max-w-[69.375rem] mx-auto py-15 lg:py-30 md:py-23 px-[1.5rem]">
       <HomeContent />
       <Button />
     </div>
@@ -39,7 +39,7 @@ function HomeContent() {
 function Button() {
   return (
     <Link to="destination">
-      <div className="flex justify-center items-center mt-24">
+      <div className="flex justify-center items-center mt-24 pb-[1.5rem]">
         <button className="w-36 h-36 md:w-[17rem] md:h-[17rem] md:text-[2rem] text-lg text-[#0B0D17] font-bellefair uppercase bg-white rounded-full  glow-button cursor-pointer">
           explore
         </button>
