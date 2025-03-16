@@ -3,7 +3,7 @@ import { NavBar } from "../components/NavBar";
 
 export function Homepage() {
   return (
-    <div className="min-h-screen bg-[url(/assets/home/background-home-mobile.jpg)] md:bg-[url(/assets/home/background-home-tablet.jpg)]  lg:bg-[url(/assets/home/background-home-desktop.jpg)] bg-no-repeat bg-center bg-cover ">
+    <div className="min-h-screen bg-[url(/assets/home/background-home-mobile.jpg)] md:bg-[url(/assets/home/background-home-tablet.jpg)]  lg:bg-[url(/assets/home/background-home-desktop.jpg)] bg-no-repeat bg-center bg-cover">
       <NavBar />
       <Main />
     </div>
@@ -12,7 +12,7 @@ export function Homepage() {
 
 function Main() {
   return (
-    <div className="flex justify-between items-center flex-col lg:flex-row lg:max-w-[69.375rem] mx-auto lg:px-[2rem] pt-35 pb-20 lg:pt-78 md:pb-30 md:pt-68 px-[1.5rem]">
+    <div className="flex justify-between items-center flex-col lg:flex-row lg:max-w-[69.375rem] mx-auto lg:px-[2rem] pt-35 pb-20 lg:pt-78 md:pb-30 md:pt-68">
       <HomeContent />
       <Button />
     </div>
@@ -20,7 +20,7 @@ function Main() {
 }
 function HomeContent() {
   return (
-    <div className="max-w-[31.25rem] md:max-w-[35.625rem] lg:max-w-[33.75rem] text-center lg:text-left">
+    <div className="max-w-[31.25rem] md:max-w-[35.625rem] lg:max-w-[33.75rem] mx-[1.5rem] text-center lg:text-left">
       <p className="text-base md:text-[1.75rem] text-[#D0D6F9] tracking-[0.15em] uppercase font-barlow-condensed">
         So, you want to travel to
       </p>

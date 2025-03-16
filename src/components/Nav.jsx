@@ -132,15 +132,15 @@ export function Nav({ isNavOpen }) {
           isNavOpen ? "left-1/3" : "left-full"
         } transition-all duration-200 ease-in-out`}
       >
-        {navList.map((navItem) => (
+        {navList.map((navItem, id) => (
           <>
             <li
-              key={navItem.id}
-              className="text-base tracking-[2px] font-barlow-condensed uppercase inline-block"
+              key={id}
+              className=" text-base tracking-[2px] font-barlow-condensed uppercase inline-block"
             >
               <NavLink
                 to={navItem.path}
-                className={({ isActive }) => isActive && "active"}
+                className={({ isActive }) => (isActive ? "active" : "")}
               >
                 <strong className="tracking-[2.7px]">{navItem.id}</strong>{" "}
                 {navItem.label}

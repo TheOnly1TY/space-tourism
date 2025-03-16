@@ -25,7 +25,7 @@ export function NavBar() {
   return (
     <nav
       className={`fixed lg:w-[52%] flex justify-between items-center lg:pt-8 p-[1.5rem] lg:mt-6  w-full z-[50] ${
-        isScrolled && "bg-[#0b0f19]"
+        isScrolled && "bg-[#0b0f19] md:bg-transparent"
       }`}
     >
       <Logo />
@@ -40,7 +40,7 @@ export function NavBar() {
           <img src="/assets/shared/icon-close.svg" />
         )}
       </figure>
-      <div className="hidden lg:flex flex-grow border-t border-white mx-10 z-10" />
+      <div className="hidden lg:flex flex-grow border-t border-white opacity-35 mx-10 z-10" />
     </nav>
   );
 }

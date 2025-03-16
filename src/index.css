@@ -2,9 +2,21 @@
 @import "tailwindcss";
 
 @theme {
+  /* COLORS */
+  --color-sea: #d0d6f9;
+
   --font-bellefair: "Bellefair", serif;
   --font-barlow: "Barlow", serif;
   --font-barlow-condensed: "Barlow Condensed", serif;
+}
+
+@layer components {
+  .text-label {
+    @apply text-sm text-sea tracking-[15%] font-barlow-condensed uppercase mb-[12px];
+  }
+  .text-value {
+    @apply text-[1.75rem] text-white font-bellefair uppercase;
+  }
 }
 
 .glow-button {
@@ -24,6 +36,19 @@
   100% {
     box-shadow: 0 0 20px rgba(225, 225, 225, 0.5);
     transform: scale(1);
+  }
+}
+
+.rotate-animate {
+  animation: rotate 100s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
