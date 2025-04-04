@@ -3,7 +3,7 @@ export function PageNotFound() {
   return (
     <section className="flex items-center flex-col px-6 md:px-10 min-h-screen bg-[url(/assets/destination/background-destination-mobile.jpg)] md:bg-[url(/assets/destination/background-destination-tablet.jpg)]  lg:bg-[url(/assets/destination/background-destination-desktop.jpg)] bg-no-repeat bg-center bg-cover">
       <figure>
-        <img src="../assets/shared/404_error.png" alt="404_error" />;
+        <img src="shared/404_error.png" alt="404_error" />;
       </figure>
       <figcaption className="flex items-center lg:gap-12 flex-col lg:flex-row text-center lg:text-left lg:mb-24">
         <div className="max-w-[28.125rem]" role="content">

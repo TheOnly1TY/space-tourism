@@ -17,9 +17,9 @@ export function NavBar() {
         onClick={handleIsOpenNav}
       >
         {!isNavOpen ? (
-          <img src="/icon-hamburger.svg" />
+          <img src="shared/icon-hamburger.svg" />
         ) : (
-          <img src="/icon-close.svg" />
+          <img src="shared/icon-close.svg" />
         )}
       </figure>
       <div className="hidden lg:flex flex-grow border-t border-white opacity-35 mx-10 z-10" />
