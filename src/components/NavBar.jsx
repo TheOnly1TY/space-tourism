@@ -1,27 +1,9 @@
 import { Nav } from "./Nav";
 import { Logo } from "./Logo";
-import { useEffect, useState } from "react";
+import { useSpace } from "../contexts/SpaceContext";
 
 export function NavBar() {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  function handleIsOpenNav() {
-    setIsNavOpen(!isNavOpen);
-  }
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setIsScrolled(scrollY >= 30);
-      setIsNavOpen(false);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isScrolled]);
-
+  const { isNavOpen, handleIsOpenNav, isScrolled } = useSpace();
   return (
     <nav
       className={`fixed lg:w-[52%] flex justify-between items-center lg:pt-8 p-[1.5rem] lg:mt-6  w-full z-[50] ${

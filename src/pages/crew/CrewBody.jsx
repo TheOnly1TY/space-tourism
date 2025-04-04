@@ -1,17 +1,19 @@
-import { useState } from "react";
 import dataStore from "../../../data/data.json";
 import { CrewNav } from "./CrewNav";
+import { useSpace } from "../../contexts/SpaceContext";
+import { useState } from "react";
 export function CrewBody() {
   const [curCrewData, setCurCrewData] = useState(0);
   const crewData = dataStore.crew;
   const { name, bio, images, role } = crewData[curCrewData];
-
   return (
     <main className="main-content mx-6 md:mx-10">
       <h2 className="heading-text">
         <span className="highlight">02 </span> meet your crew
       </h2>
-      <section className="flex justify-center items-center flex-col lg:flex-row lg:gap-10">
+      <section
+        className={`flex justify-center items-center flex-col lg:flex-row lg:gap-10`}
+      >
         <div
           className="flex flex-col justify-between items-center lg:items-start max-w-[539px] gap-20 md:gap-10 lg:gap-30"
           role="content"

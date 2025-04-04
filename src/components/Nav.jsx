@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useSpace } from "../contexts/SpaceContext";
 
 const navList = [
   { id: "00", label: "home", path: "/" },
@@ -7,9 +8,8 @@ const navList = [
   { id: "03", label: "technology", path: "/technology" },
 ];
 
-// still have to fix width issue for tablet screen
-
-export function Nav({ isNavOpen }) {
+export function Nav() {
+  const { isNavOpen } = useSpace();
   return (
     <div className="md:fixed md:right-0 md:top-0 lg:top-auto">
       <ul
@@ -21,7 +21,7 @@ export function Nav({ isNavOpen }) {
           <>
             <li
               key={id}
-              className=" text-base tracking-[2px] font-barlow-condensed uppercase inline-block"
+              className="text-base tracking-[2px] font-barlow-condensed uppercase inline-block"
             >
               <NavLink
                 to={navItem.path}

@@ -43,7 +43,7 @@
 }
 
 ul a,
-.linep {
+.lineP {
   position: relative;
 }
 .line::before {
@@ -56,10 +56,11 @@ ul a,
   background-color: white;
   transition: all 0.3s;
 }
+
 ul a.active::before {
   content: "";
   position: absolute;
-  bottom: -35px;
+  bottom: -37px;
   left: 0;
   width: 100%;
   height: 3px;

@@ -1,21 +1,14 @@
-import { useState } from "react";
-
+import { useSpace } from "../../contexts/SpaceContext";
 import dataStore from "../../../data/data.json";
+
 import { DestinationContent } from "./DestinationContent";
 import { DestinationNav } from "./DestinationNav";
 
 export function DestinationBody() {
-  const [isFading, setIsFading] = useState(false);
-  const [destinationId, setDestinationId] = useState(0);
+  const { isFading, destinationId } = useSpace();
   const destinationData = dataStore.destinations;
   const { name, images } = destinationData[destinationId];
-  const handleDestinationChange = (newId) => {
-    setIsFading(true);
-    setTimeout(() => {
-      setDestinationId(newId);
-      setIsFading(false);
-    }, 300);
-  };
+
   return (
     <main className="main-content mx-6 md:mx-10">
       <h2 className="heading-text">
@@ -37,11 +30,7 @@ export function DestinationBody() {
           className="max-w-[28.125rem] md:max-w-[32.125rem] lg:max-w-[27.8125rem] mx-auto pt-8 md:pt-15"
           role="content"
         >
-          <DestinationNav
-            destinationData={destinationData}
-            destinationId={destinationId}
-            DestinationChange={handleDestinationChange}
-          />
+          <DestinationNav destinationData={destinationData} />
           <DestinationContent
             destinationData={destinationData[destinationId]}
           />
