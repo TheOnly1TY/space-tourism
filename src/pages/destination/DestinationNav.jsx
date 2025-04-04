@@ -1,11 +1,8 @@
 export function DestinationNav({
   destinationData,
   destinationId,
-  setDestinationId,
+  DestinationChange,
 }) {
-  const handleDestinationNav = (id) => {
-    setDestinationId(id);
-  };
   return (
     <nav className=" flex justify-center lg:justify-start mb-6 lg:mb-10 gap-7">
       {destinationData.map((data, id) => (
@@ -14,7 +11,7 @@ export function DestinationNav({
             destinationId === id && "text-white line"
           }`}
           key={data.name}
-          onClick={() => handleDestinationNav(id)}
+          onClick={() => DestinationChange(id)}
         >
           {data.name}
         </h3>

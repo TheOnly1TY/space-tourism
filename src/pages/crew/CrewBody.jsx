@@ -7,7 +7,7 @@ export function CrewBody() {
   const { name, bio, images, role } = crewData[curCrewData];
 
   return (
-    <main className="main-content">
+    <main className="main-content mx-6 md:mx-10">
       <h2 className="heading-text">
         <span className="highlight">02 </span> meet your crew
       </h2>

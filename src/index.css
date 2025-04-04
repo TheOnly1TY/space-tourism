@@ -19,33 +19,13 @@
     @apply text-[1.75rem] text-white font-bellefair uppercase;
   }
   .main-content {
-    @apply grid grid-rows-1 text-center lg:text-left lg:place-content-center pt-40 pb-20 lg:py-40 mx-6 md:mx-10;
+    @apply grid grid-rows-1 text-center lg:text-left lg:place-content-center pt-40 pb-20 lg:py-40;
   }
   .heading-text {
     @apply text-base lg:text-[1.75rem] text-center md:text-left text-white tracking-[4px] uppercase font-barlow-condensed pb-4 md:pb-6;
   }
   .highlight {
     @apply font-bold tracking-[4.72px] opacity-35;
-  }
-}
-
-.glow-button {
-  transition: all 0.3s ease-in-out;
-  animation: glow 1.5s infinite alternate;
-}
-
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 20px rgba(225, 225, 225, 0.5);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 45px rgba(225, 225, 225, 0.8);
-    transform: scale(1.1);
-  }
-  100% {
-    box-shadow: 0 0 20px rgba(225, 225, 225, 0.5);
-    transform: scale(1);
   }
 }
 
@@ -97,25 +77,5 @@ ul a.active::before {
     height: 3px;
     background-color: white;
     transition: all 0.3s;
-  }
-}
-
-.loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #fff;
-  border-bottom-color: transparent;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
