@@ -1,8 +1,7 @@
-export function CrewNav({ crewData, curCrewData, setCurCrewData }) {
-  const handleCrewNav = (index) => {
-    setCurCrewData(index);
-  };
+import { useSpace } from "../../contexts/SpaceContext";
 
+export function CrewNav() {
+  const { crewData, curCrewData, handleCrewNav } = useSpace();
   return (
     <div className="flex gap-5 lg:gap-9">
       {crewData.map((_, index) => (

@@ -12,7 +12,7 @@ export function PageNotFound() {
           </h1>
           <p className="text-base md:text-lg text-sea leading-[180%] font-barlow font-light">
             This page is lost in space! That means it is not where it should be.
-            Let's take you back home so you don't get lost even more.
+            Let&apos;s take you back home so you don&apos;t get lost even more.
           </p>
         </div>
         <div aria-label="button parent">

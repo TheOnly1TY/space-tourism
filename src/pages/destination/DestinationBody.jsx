@@ -1,13 +1,11 @@
 import { useSpace } from "../../contexts/SpaceContext";
-import dataStore from "../../../data/data.json";
 
 import { DestinationContent } from "./DestinationContent";
 import { DestinationNav } from "./DestinationNav";
 
 export function DestinationBody() {
-  const { isFading, destinationId } = useSpace();
-  const destinationData = dataStore.destinations;
-  const { name, images } = destinationData[destinationId];
+  const { isFading, currentDestinationData } = useSpace();
+  const { name, images } = currentDestinationData;
 
   return (
     <main className="main-content mx-6 md:mx-10">
@@ -30,10 +28,8 @@ export function DestinationBody() {
           className="max-w-[28.125rem] md:max-w-[32.125rem] lg:max-w-[27.8125rem] mx-auto pt-8 md:pt-15"
           role="content"
         >
-          <DestinationNav destinationData={destinationData} />
-          <DestinationContent
-            destinationData={destinationData[destinationId]}
-          />
+          <DestinationNav />
+          <DestinationContent />
         </div>
       </div>
     </main>

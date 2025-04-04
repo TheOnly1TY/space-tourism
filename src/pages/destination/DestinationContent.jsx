@@ -1,5 +1,8 @@
-export function DestinationContent({ destinationData }) {
-  const { name, description, distance, travel } = destinationData;
+import { useSpace } from "../../contexts/SpaceContext";
+
+export function DestinationContent() {
+  const { currentDestinationData } = useSpace();
+  const { name, description, distance, travel } = currentDestinationData;
   return (
     <>
       <h1 className="text-[5rem] lg:text-8xl text-white font-bellefair uppercase mb-4">

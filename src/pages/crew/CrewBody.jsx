@@ -1,10 +1,8 @@
-import dataStore from "../../../data/data.json";
-import { CrewNav } from "./CrewNav";
 import { useSpace } from "../../contexts/SpaceContext";
-import { useState } from "react";
+
+import { CrewNav } from "./CrewNav";
 export function CrewBody() {
-  const [curCrewData, setCurCrewData] = useState(0);
-  const crewData = dataStore.crew;
+  const { crewData, curCrewData, isFading } = useSpace();
   const { name, bio, images, role } = crewData[curCrewData];
   return (
     <main className="main-content mx-6 md:mx-10">
@@ -12,7 +10,9 @@ export function CrewBody() {
         <span className="highlight">02 </span> meet your crew
       </h2>
       <section
-        className={`flex justify-center items-center flex-col lg:flex-row lg:gap-10`}
+        className={`flex justify-center items-center flex-col lg:flex-row lg:gap-10 transition-opacity duration-500 ${
+          isFading ? "opacity-0" : "opacity-100"
+        }`}
       >
         <div
           className="flex flex-col justify-between items-center lg:items-start max-w-[539px] gap-20 md:gap-10 lg:gap-30"
@@ -29,11 +29,7 @@ export function CrewBody() {
               {bio}
             </p>
           </div>
-          <CrewNav
-            crewData={crewData}
-            curCrewData={curCrewData}
-            setCurCrewData={setCurCrewData}
-          />
+          <CrewNav />
         </div>
         <figure>
           <img

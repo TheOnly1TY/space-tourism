@@ -17,10 +17,10 @@ export function Nav() {
           isNavOpen ? "left-1/3" : "left-full"
         } transition-all duration-200 ease-in-out`}
       >
-        {navList.map((navItem, id) => (
+        {navList.map((navItem, index) => (
           <>
             <li
-              key={id}
+              key={index}
               className="text-base tracking-[2px] font-barlow-condensed uppercase inline-block"
             >
               <NavLink

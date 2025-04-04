@@ -1,19 +1,12 @@
+import { useSpace } from "../../contexts/SpaceContext";
 import { TechnologyNav } from "./TechnologyNav";
 
-export function TechnologyContent({
-  technologyData,
-  technologyDat,
-  curTechData,
-  setCurTechData,
-}) {
-  const { name, description } = technologyData;
+export function TechnologyContent() {
+  const { techData } = useSpace();
+  const { name, description } = techData;
   return (
     <div className="flex justify-center items-center flex-col lg:flex-row">
-      <TechnologyNav
-        curTechData={curTechData}
-        setCurTechData={setCurTechData}
-        technologyData={technologyDat}
-      />
+      <TechnologyNav />
       <div className="md:max-w-[512px] lg:max-w-[491px] mx-6 md:mx-10">
         <h3 className="text-lg md:text-[2rem] text-white opacity-35 uppercase py-3">
           the terminology…

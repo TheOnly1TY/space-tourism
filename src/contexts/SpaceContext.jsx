@@ -1,17 +1,26 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import dataStore from "../../data/data.json";
 
 const SpaceContext = createContext();
 
 function SpaceProvider({ children }) {
+  const [destinationId, setDestinationId] = useState(0);
+  const [curCrewData, setCurCrewData] = useState(0);
+  const [curTechData, setCurTechData] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [destinationId, setDestinationId] = useState(0);
-
   const [isFading, setIsFading] = useState(false);
+
+  const destinationData = dataStore.destinations;
+  const currentDestinationData = destinationData[destinationId];
+  const crewData = dataStore.crew;
+  const technologyData = dataStore.technology;
+  const techData = technologyData[curTechData];
 
   const location = useLocation();
 
+  // closing the nav after routing to a new page
   useEffect(() => {
     setIsNavOpen(false);
   }, [location]);
@@ -32,10 +41,22 @@ function SpaceProvider({ children }) {
     setIsNavOpen(!isNavOpen);
   }
 
-  const handleAnimateChange = (newId) => {
+  const handleDestinationNav = (index) => {
+    handleAnimateChange(index, setDestinationId);
+  };
+
+  const handleCrewNav = (index) => {
+    handleAnimateChange(index, setCurCrewData);
+  };
+
+  const handleTechnologyNav = (index) => {
+    handleAnimateChange(index, setCurTechData);
+  };
+
+  const handleAnimateChange = (newId, setterFn) => {
     setIsFading(true);
     setTimeout(() => {
-      setDestinationId(newId);
+      setterFn(newId);
       setIsFading(false);
     }, 300);
   };
@@ -47,8 +68,17 @@ function SpaceProvider({ children }) {
         isNavOpen,
         isScrolled,
         isFading,
-        handleAnimateChange,
         destinationId,
+        destinationData,
+        currentDestinationData,
+        crewData,
+        curCrewData,
+        curTechData,
+        technologyData,
+        techData,
+        handleDestinationNav,
+        handleCrewNav,
+        handleTechnologyNav,
       }}
     >
       {children}
